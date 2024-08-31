@@ -1,0 +1,8 @@
+.headerContainer {
+  height: 72px;
+  display: flex;
+  padding: 0 64px;
+  align-items: center;
+  gap: calc(100% / 2 - 206px);
+  background-color: var(--inputs);
+}

@@ -1,0 +1,9 @@
+.button {
+  background-color: var(--button);
+  border-radius: 200px;
+  padding: 16px 48.5px;
+  width: 100%;
+  height: 56px;
+  color: var(--white);
+  border: none;
+}

@@ -1,0 +1,32 @@
+.container {
+  background-image: url("../../img/homePage/homePage.jpg");
+  background-position: center;
+  padding: 260px 64px;
+  justify-content: center;
+  background-repeat: no-repeat;
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .container {
+    background-image: url("../../img/homePage/homePage@2x.jpg");
+  }
+}
+
+.button {
+  text-decoration: none;
+  display: block;
+  width: 172px;
+}
+
+.itemsContainer {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
+}
+
+.textContainer {
+  flex-direction: column;
+  display: flex;
+  gap: 16px;
+  color: var(--inputs);
+}
