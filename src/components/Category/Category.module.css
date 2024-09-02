@@ -1,0 +1,14 @@
+.categoryItem {
+  border-radius: 100px;
+  padding: 12px 18px;
+  height: 44px;
+  background: var(--badges);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.categoryIcon {
+  height: 20px;
+  width: 20px;
+}

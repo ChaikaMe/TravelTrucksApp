@@ -1,0 +1,15 @@
+.photoList {
+  display: flex;
+  gap: 48px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.photo {
+  border-radius: 10px;
+  width: 292px;
+  height: 312px;
+  display: block;
+  object-fit: cover;
+}

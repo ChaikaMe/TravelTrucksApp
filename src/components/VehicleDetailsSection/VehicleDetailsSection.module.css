@@ -1,0 +1,25 @@
+.detailsSection {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+.titleData {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.titleContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.text {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+  margin: 0;
+}

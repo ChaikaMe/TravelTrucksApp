@@ -11,6 +11,6 @@
   color: var(--main);
 }
 
-.link.active {
+.activeLink {
   color: var(--button-hover);
 }

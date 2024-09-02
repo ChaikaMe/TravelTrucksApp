@@ -1,0 +1,25 @@
+.labelContainer {
+  font-family: "Inter", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5em;
+  color: var(--gray);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.icon {
+  fill: var(--gray);
+}
+
+.activeIcon {
+  fill: var(--main);
+}
+
+.icon,
+.activeIcon {
+  width: 20px;
+  height: 20px;
+  transition: var(--animation);
+}

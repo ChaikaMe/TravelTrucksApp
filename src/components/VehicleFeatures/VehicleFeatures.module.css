@@ -1,0 +1,8 @@
+.container {
+  border-radius: 10px;
+  padding: 44px 80px;
+  background: var(--inputs);
+  display: flex;
+  gap: 100px;
+  flex-direction: column;
+}

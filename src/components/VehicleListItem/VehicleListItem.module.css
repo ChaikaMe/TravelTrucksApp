@@ -1,0 +1,78 @@
+.container {
+  border: 1px solid var(--gray-light);
+  border-radius: 20px;
+  padding: 24px;
+  height: 368px;
+  max-width: 100%;
+  display: flex;
+  gap: 24px;
+}
+
+.photo {
+  border-radius: 10px;
+  min-width: 292px;
+  max-width: 292px;
+  display: block;
+  object-fit: cover;
+}
+
+.detailsContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.titleContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.title {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.priceAndHeart {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.heartIcon,
+.heartIconActive {
+  width: 26px;
+  height: 24px;
+  display: flex;
+}
+
+.heartIconActive {
+  fill: var(--button);
+}
+
+.description {
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-clamp: 1;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+  height: 24px;
+
+  margin: 0;
+}
+
+.showButton {
+  text-decoration: none;
+  border-radius: 200px;
+  width: 166px;
+}

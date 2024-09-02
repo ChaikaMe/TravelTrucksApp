@@ -1,0 +1,67 @@
+.container {
+  padding: 48px 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.navLinkList {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  position: relative;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 120%;
+  color: var(--main);
+}
+
+.navLinkActive::after {
+  content: "";
+  display: block;
+  width: 85px;
+  height: 4.5px;
+  background-color: var(--button);
+  position: absolute;
+  bottom: -24px;
+  left: 0;
+}
+
+.navLink:visited {
+  color: unset;
+}
+
+.bottomSection {
+  display: flex;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.revFeatContainer {
+  width: 632px;
+  height: 588px;
+  border-radius: 10px;
+}
+
+.bookingForm {
+  border: 1px solid var(--gray-light);
+  border-radius: 10px;
+  width: 641px;
+  height: 588px;
+}

@@ -1,0 +1,31 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.button {
+  border: 1px solid var(--gray-light);
+  border-radius: 200px;
+  padding: 16px 30px;
+  width: 145px;
+  height: 56px;
+  background-color: transparent;
+  transition: var(--animation);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.button:hover {
+  border: 1px solid var(--button);
+}

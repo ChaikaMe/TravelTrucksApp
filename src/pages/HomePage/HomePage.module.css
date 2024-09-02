@@ -1,9 +1,8 @@
 .container {
-  background-image: url("../../img/homePage/homePage.jpg");
-  background-position: center;
-  padding: 260px 64px;
+  padding: calc((100vh - 248px) / 2) 64px;
   justify-content: center;
-  background-repeat: no-repeat;
+  background: #fff url("../../img/homePage/homePage.jpg") no-repeat center /
+    cover;
 }
 
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {

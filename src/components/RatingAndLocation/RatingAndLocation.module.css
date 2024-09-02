@@ -1,0 +1,31 @@
+.rlContainer {
+  display: flex;
+  gap: 16px;
+}
+
+.rlText {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--main);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin: 0;
+}
+
+.rlText:nth-child(1) {
+  text-decoration: underline;
+}
+
+.ratingIcon {
+  width: 16px;
+  height: 16px;
+  fill: var(--rating);
+}
+
+.mapIcon {
+  width: 16px;
+  height: 16px;
+  fill: var(--main);
+}

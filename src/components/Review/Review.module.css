@@ -1,0 +1,52 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.userData {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.ball {
+  border-radius: 60px;
+  width: 60px;
+  height: 60px;
+  background: var(--badges);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 133%;
+  color: var(--button);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.nameNrating {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.activeIcon {
+  width: 16px;
+  height: 16px;
+  fill: var(--rating);
+}
+
+.notActiveIcon {
+  width: 16px;
+  height: 16px;
+  fill: var(--badges);
+}
+
+.comment {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: var(--text);
+}

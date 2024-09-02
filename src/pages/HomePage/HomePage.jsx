@@ -11,7 +11,7 @@ export default function HomePage() {
           <h2>You can find everything you want in our catalog</h2>
         </div>
         <NavLink className={css.button} to="/catalog">
-          <Button text="Viev Now" />
+          <Button text="Viev Now" type="button" />
         </NavLink>
       </div>
     </div>

@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.buttonList {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
