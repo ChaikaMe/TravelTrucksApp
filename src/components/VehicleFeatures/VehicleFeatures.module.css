@@ -3,6 +3,19 @@
   padding: 44px 80px;
   background: var(--inputs);
   display: flex;
-  gap: 100px;
+  justify-content: space-between;
   flex-direction: column;
+  height: 100%;
+}
+
+@media screen and (max-width: 769px) {
+  .container {
+    padding: 44px 44px;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .container {
+    padding: 20px 20px;
+  }
 }

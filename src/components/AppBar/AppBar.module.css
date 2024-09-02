@@ -6,3 +6,17 @@
   gap: calc(100% / 2 - 206px);
   background-color: var(--inputs);
 }
+
+@media screen and (max-width: 376px) {
+  .headerContainer {
+    height: 100px;
+    padding: 16px 64px;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .headerContainer {
+    gap: 20px;
+  }
+}

@@ -18,12 +18,12 @@ export default function Location() {
         placeholder="City"
         variant="outlined"
         autoComplete="off"
+        fullWidth
         sx={{
           "& .MuiOutlinedInput-root": {
             backgroundColor: "var(--inputs)",
             borderRadius: "12px",
             fontFamily: "Inter, sans-serif",
-            width: 360,
             height: 56,
             "& fieldset": {
               borderRadius: "12px",

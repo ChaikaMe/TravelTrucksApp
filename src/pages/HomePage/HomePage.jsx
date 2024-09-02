@@ -7,8 +7,10 @@ export default function HomePage() {
     <div className={css.container}>
       <div className={css.itemsContainer}>
         <div className={css.textContainer}>
-          <h1>Campers of your dreams</h1>
-          <h2>You can find everything you want in our catalog</h2>
+          <h1 className={css.mainTitle}>Campers of your dreams</h1>
+          <h2 className={css.senondaryTitle}>
+            You can find everything you want in our catalog
+          </h2>
         </div>
         <NavLink className={css.button} to="/catalog">
           <Button text="Viev Now" type="button" />

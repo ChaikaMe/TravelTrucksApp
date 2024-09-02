@@ -2,10 +2,18 @@
   display: flex;
   flex-direction: column;
   gap: 24px;
+  width: 100%;
 }
 
 .buttonList {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
+  width: 100%;
+}
+
+@media screen and (max-width: 769px) {
+  .buttonList {
+    justify-content: center;
+  }
 }

@@ -9,3 +9,12 @@
   width: 166px;
   border-radius: 200px;
 }
+
+@media screen and (max-width: 769px) {
+  .container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+  }
+}

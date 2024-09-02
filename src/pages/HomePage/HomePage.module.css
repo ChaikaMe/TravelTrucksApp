@@ -29,3 +29,21 @@
   gap: 16px;
   color: var(--inputs);
 }
+
+@media screen and (max-width: 769px) {
+  .mainTitle {
+    font-size: 32px;
+  }
+  .senondaryTitle {
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .mainTitle {
+    font-size: 24px;
+  }
+  .senondaryTitle {
+    font-size: 12px;
+  }
+}

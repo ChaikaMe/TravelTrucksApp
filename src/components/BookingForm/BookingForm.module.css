@@ -31,3 +31,9 @@
   display: flex;
   justify-content: center;
 }
+
+@media screen and (max-width: 376px) {
+  .form {
+    padding: 20px;
+  }
+}

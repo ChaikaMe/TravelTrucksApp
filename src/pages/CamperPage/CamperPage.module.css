@@ -50,17 +50,33 @@ a {
 .bottomSection {
   display: flex;
   gap: 40px;
+  height: 588px;
 }
 
 .revFeatContainer {
+  height: 100%;
   width: 100%;
-  height: 588px;
   border-radius: 10px;
 }
 
 .bookingForm {
+  height: 100%;
   border: 1px solid var(--gray-light);
   border-radius: 10px;
   width: 100%;
-  height: 588px;
+}
+
+@media screen and (max-width: 769px) {
+  .container {
+    padding: 24px 32px;
+  }
+  .bottomSection {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 376px) {
+  .container {
+    padding: 16px 24px;
+  }
 }
