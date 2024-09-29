@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import { ToggleButton } from "@mui/material";
 import icons from "../../img/icons.svg";
 import css from "./VehicleListItem.module.css";
@@ -6,17 +5,17 @@ import Button from "../Button/Button";
 import { NavLink } from "react-router-dom";
 import CategoryList from "../CategoryList/CategoryList";
 import RatingAndLocation from "../RatingAndLocation/RatingAndLocation";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleFavourite } from "../../redux/campers/slice-campers";
-import { selectfavouriteCampers } from "../../redux/campers/selectors-campers";
+import favouriteChanger from "../../helpers/favouriteChanger";
+import { useState } from "react";
 
 export default function VehicleListItem({ data }) {
-  const dispatch = useDispatch();
+  const tempData = localStorage.getItem("favouriteCampers") || [];
+  const [isFavourite, setIsFavourite] = useState(tempData.includes(data.id));
   const handleClick = (id) => {
-    dispatch(toggleFavourite(id));
+    favouriteChanger(id);
+    const favouriteCampers = localStorage.getItem("favouriteCampers") || [];
+    setIsFavourite(favouriteCampers.includes(data.id));
   };
-  const favouriteCampers = useSelector(selectfavouriteCampers);
-  const isFavourite = favouriteCampers.includes(data.id);
 
   return (
     <div className={css.container}>

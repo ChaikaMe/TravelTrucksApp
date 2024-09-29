@@ -27,6 +27,7 @@ export default function App() {
             <Route path="reviews" element={<VehicleReviews />} />
           </Route>
           <Route path="*" element={<NotFoundPage />} />
+          <Route path="/not-found" element={<NotFoundPage />} />
         </Routes>
       </Suspense>
     </Layout>

@@ -1,18 +1,15 @@
-import { useDispatch } from "react-redux";
 import icons from "../../img/icons.svg";
 import FilterFragment from "../FilterFragment/FilterFragment";
 import StyledToggleButton from "../StyledToggleButton/StyledToggleButton";
 import css from "./FilterType.module.css";
 import { useState } from "react";
-import { changeType } from "../../redux/filters/slice-filter";
 
-export default function FilterType() {
-  const dispatch = useDispatch();
-
+export default function FilterType({ setType }) {
   const [selected, setSelected] = useState({ form: "" });
+
   const handleClick = (value) => {
     setSelected({ form: value });
-    dispatch(changeType({ form: value }));
+    setType({ form: value });
   };
 
   return (

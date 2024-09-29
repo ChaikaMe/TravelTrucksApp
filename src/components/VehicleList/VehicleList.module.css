@@ -1,3 +1,11 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 888px;
+  width: 100%;
+}
+
 .list {
   display: flex;
   flex-direction: column;
@@ -5,13 +13,12 @@
   list-style: none;
   margin: 0;
   padding: 0;
-  width: 100%;
 }
 
-.container {
+.loader {
   display: flex;
-  flex-direction: column;
-  gap: 40px;
+  align-items: center;
+  justify-content: center;
 }
 
 .button {

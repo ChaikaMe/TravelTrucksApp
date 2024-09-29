@@ -1,6 +1,6 @@
 import { Suspense, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { NavLink, Outlet, useLocation } from "react-router-dom";
+import { Navigate, NavLink, Outlet, useLocation } from "react-router-dom";
 import { fetchExactCamper } from "../../redux/campers/ops-campers";
 import { selectCamper } from "../../redux/campers/selectors-campers";
 import css from "./CamperPage.module.css";
@@ -19,65 +19,85 @@ export default function CamperPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(false);
 
+  const camper = useSelector(selectCamper);
+
   useEffect(() => {
     async function fetchCamper() {
+      setIsLoading(true);
       try {
-        await dispatch(fetchExactCamper(camperId));
+        const result = await dispatch(fetchExactCamper(camperId)).unwrap();
+        if (!result) {
+          setError(true);
+        }
       } catch {
         setError(true);
       } finally {
         setIsLoading(false);
       }
     }
-    fetchCamper();
+
+    if (camperId) {
+      fetchCamper();
+    } else {
+      setError(true);
+      setIsLoading(false);
+    }
   }, [dispatch, camperId]);
 
-  const camper = useSelector(selectCamper);
+  if (error) {
+    return <Navigate to="/not-found" replace />;
+  }
 
   return (
     <div className={css.container}>
-      {error ? "Error! Please try again!" : ""}
-      {isLoading ? <Loader /> : <VehicleDetailsSection camper={camper} />}
-      <section className={css.section}>
-        <div>
-          <ul className={css.navLinkList}>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? `${css.navLink} ${css.navLinkActive}` : css.navLink
-                }
-                to="features"
-              >
-                Features
-              </NavLink>
-            </li>
-            <li>
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? `${css.navLink} ${css.navLinkActive}` : css.navLink
-                }
-                to="reviews"
-              >
-                Reviews
-              </NavLink>
-            </li>
-          </ul>
-        </div>
-
-        <Line />
-
-        <div className={css.bottomSection}>
-          <div className={css.revFeatContainer}>
-            <Suspense fallback={<Loader />}>
-              <Outlet />
-            </Suspense>
+      <div className={css.subContainer}>
+        {error ? "Error! Please try again!" : ""}
+        {isLoading ? <Loader /> : <VehicleDetailsSection camper={camper} />}
+        <section className={css.section}>
+          <div>
+            <ul className={css.navLinkList}>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${css.navLink} ${css.navLinkActive}`
+                      : css.navLink
+                  }
+                  to="features"
+                >
+                  Features
+                </NavLink>
+              </li>
+              <li>
+                <NavLink
+                  className={({ isActive }) =>
+                    isActive
+                      ? `${css.navLink} ${css.navLinkActive}`
+                      : css.navLink
+                  }
+                  to="reviews"
+                >
+                  Reviews
+                </NavLink>
+              </li>
+            </ul>
           </div>
-          <div className={css.bookingForm}>
-            <BookingForm />
+
+          <Line />
+
+          <div className={css.bottomSection}>
+            <div className={css.revFeatContainer}>
+              <Suspense fallback={<Loader />}>
+                <Outlet />
+              </Suspense>
+            </div>
+            <div className={css.bookingForm}>
+              <BookingForm />
+            </div>
           </div>
-        </div>
-      </section>
-      <Toaster />
+        </section>
+        <Toaster />
+      </div>
     </div>
   );
 }

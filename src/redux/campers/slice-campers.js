@@ -11,16 +11,9 @@ const campersSlice = createSlice({
     error: false,
   },
   reducers: {
-    toggleFavourite: (state, action) => {
-      const camperId = action.payload;
-      const isFavourite = state.favourite.includes(camperId);
-
-      if (isFavourite) {
-        state.favourite = state.favourite.filter((id) => id !== camperId);
-      } else {
-        state.favourite.push(camperId);
-      }
-      localStorage.setItem("favouriteCampers", JSON.stringify(state.favourite));
+    toggleFavourite: (state) => {
+      state.favourite =
+        JSON.parse(localStorage.getItem("favouriteCampers")) || [];
     },
   },
   extraReducers: (builder) =>
@@ -39,6 +32,10 @@ const campersSlice = createSlice({
       })
       .addCase(fetchExactCamper.fulfilled, (state, action) => {
         state.item = action.payload;
+      })
+      .addCase(fetchExactCamper.rejected, (state) => {
+        state.error = true;
+        state.isLoading = false;
       }),
 });
 

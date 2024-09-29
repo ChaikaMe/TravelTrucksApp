@@ -6,13 +6,18 @@ import {
 import Loader from "../Loader/Loader";
 import VehicleListItem from "../VehicleListItem/VehicleListItem";
 import css from "./VehicleList.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 export default function VehicleList() {
   const campers = useSelector(selectFilteredCampers);
   const isLoading = useSelector(selectIsLoading);
   const [num, setNum] = useState(4);
   const visibleCampers = campers.slice(0, num);
+
+  useEffect(() => {
+    setNum(4);
+  }, [campers]);
+
   const handleClick = () => {
     const tempNum = num + 4;
     setNum(tempNum);
@@ -22,7 +27,9 @@ export default function VehicleList() {
     <div className={css.container}>
       <ul className={css.list}>
         {isLoading ? (
-          <Loader />
+          <div className={css.loader}>
+            <Loader />
+          </div>
         ) : (
           <>
             {visibleCampers.map((camper) => (

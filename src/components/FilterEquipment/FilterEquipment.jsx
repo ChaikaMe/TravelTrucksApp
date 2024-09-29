@@ -2,20 +2,8 @@ import FilterFragment from "../FilterFragment/FilterFragment";
 import StyledToggleButton from "../StyledToggleButton/StyledToggleButton";
 import icons from "../../img/icons.svg";
 import css from "./FilterEquipment.module.css";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { changeEquipment } from "../../redux/filters/slice-filter";
 
-export default function FilterEquipment() {
-  const dispatch = useDispatch();
-  const [equipment, setEquipment] = useState({
-    AC: false,
-    transmission: "manual",
-    kitchen: false,
-    TV: false,
-    bathroom: false,
-  });
-
+export default function FilterEquipment({ equipment, setEquipment }) {
   const handleClick = (addedEquipment) => {
     const updatedEquipment = { ...equipment };
     if (addedEquipment === "transmission") {
@@ -30,7 +18,6 @@ export default function FilterEquipment() {
       }
     }
     setEquipment(updatedEquipment);
-    dispatch(changeEquipment(updatedEquipment));
   };
 
   return (

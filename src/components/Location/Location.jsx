@@ -3,12 +3,9 @@ import InputAdornment from "@mui/material/InputAdornment";
 import icons from "../../img/icons.svg";
 import css from "./Location.module.css";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
-import { changeLocation } from "../../redux/filters/slice-filter";
 
-export default function Location() {
+export default function Location({ setLocation }) {
   const [activeIcon, setActiveIcon] = useState(false);
-  const dispatch = useDispatch();
 
   return (
     <label className={css.labelContainer}>
@@ -51,7 +48,7 @@ export default function Location() {
           }
           setActiveIcon(false);
         }}
-        onChange={(e) => dispatch(changeLocation(e.target.value))}
+        onChange={(e) => setLocation(e.target.value)}
       />
     </label>
   );
